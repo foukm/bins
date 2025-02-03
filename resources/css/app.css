@@ -1,0 +1,187 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #444;
+    font-size: 1.5em;
+}
+
+.sidebar .menu , .menu .submenu{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu li {
+    padding: 10px 5px 10px 20px;
+}
+
+.sidebar .menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.sidebar .menu li a:hover {
+    background-color: #555;
+}
+
+/* Rotate arrow when submenu is expanded */
+.submenu-toggle[aria-expanded="true"] .submenu-arrow {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Ensure the arrow icon rotates smoothly */
+.submenu-arrow {
+    transition: transform 0.3s ease-in-out;
+}
+.icon {
+    margin-right: 10px;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+h1 {
+    color: #4a90e2;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Φόρμα */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* Χάρτης */
+#map {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Απόσταση από τη φόρμα */
+}
+
+/* Ευθυγράμμιση στη φόρμα */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.table thead th {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.table td{
+    vertical-align: middle !important;
+}
+/*
+!* Γενικές ρυθμίσεις για το table *!
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+!* Στυλ για το header του πίνακα *!
+.table thead h3.box {
+    text-align: left;
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.table thead th {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+!* Στυλ για τα κελιά του πίνακα *!
+.table tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+!* Εφέ hover στα rows *!
+.table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+!* Κουμπί διαγραφής *!
+.table .btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.table .btn-danger:hover {
+    background-color: #c9302c;
+}
+*/
