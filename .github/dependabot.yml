@@ -2,7 +2,6 @@
 # Two separately named groups are needed: one rule set cannot apply to both
 # security and version updates.
 # Version updates have a default 3-day cooldown; security updates are not delayed.
-# UNTESTED: verify in the personal repo before presenting.
 version: 2
 updates:
   - package-ecosystem: "npm"
