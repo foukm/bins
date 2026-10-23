@@ -1,35 +1,25 @@
-# Variant C: variant B for security updates, plus grouped weekly version updates.
-# Two separately named groups are needed: one rule set cannot apply to both
-# security and version updates.
-# Version updates have a default 3-day cooldown; security updates are not delayed.
 version: 2
-updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    cooldown:
-      default-days: 3
-    groups:
-      security-safe:
-        applies-to: security-updates
-        update-types: ["patch", "minor"]
-      routine-updates:
-        applies-to: version-updates
-        update-types: ["patch", "minor"]
+  updates:
+    - package-ecosystem: "npm"
+      directory: "/"
+      schedule:
+        interval: "weekly"
+      groups:
+        security-runtime:
+          applies-to: security-updates
+          dependency-type: "production"
+        security-dev:
+          applies-to: security-updates
+          dependency-type: "development"
 
-  - package-ecosystem: "composer"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    cooldown:
-      default-days: 3
-    groups:
-      security-safe:
-        applies-to: security-updates
-        update-types: ["patch", "minor"]
-      routine-updates:
-        applies-to: version-updates
-        update-types: ["patch", "minor"]
+    - package-ecosystem: "composer"
+      directory: "/"
+      schedule:
+        interval: "weekly"
+      groups:
+        security-runtime:
+          applies-to: security-updates
+          dependency-type: "production"
+        security-dev:
+          applies-to: security-updates
+          dependency-type: "development"
