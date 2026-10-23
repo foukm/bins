@@ -1,5 +1,7 @@
-# Variant A: security updates only, one grouped PR per ecosystem.
-# Version updates are switched off with open-pull-requests-limit: 0.
+# Variant C: variant B for security updates, plus grouped weekly version updates.
+# Two separately named groups are needed: one rule set cannot apply to both
+# security and version updates.
+# Version updates have a default 3-day cooldown; security updates are not delayed.
 # UNTESTED: verify in the personal repo before presenting.
 version: 2
 updates:
@@ -7,18 +9,28 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 3
     groups:
-      security:
+      security-safe:
         applies-to: security-updates
-        patterns: ["*"]
+        update-types: ["patch", "minor"]
+      routine-updates:
+        applies-to: version-updates
+        update-types: ["patch", "minor"]
 
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 3
     groups:
-      security:
+      security-safe:
         applies-to: security-updates
-        patterns: ["*"]
+        update-types: ["patch", "minor"]
+      routine-updates:
+        applies-to: version-updates
+        update-types: ["patch", "minor"]
